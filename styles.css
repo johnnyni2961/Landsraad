@@ -1,57 +1,104 @@
-/* General styles */
+@import url('https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&display=swap');
+
 body {
-    font-family: 'Cormorant Garamond', serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-header, main, footer {
-    padding: 20px;
+    background: #d6d6d6;
+    font-family: 'Georgia', serif;
     text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Disable scrolling */
 }
 
-/* Header styles */
-.header {
-    padding: 20px 0;
-    text-align: center; /* Center the image horizontally */
-    overflow: hidden; /* Ensure the image is cropped */
-    height: 150px; /* Adjust the height as needed */
-}
-
-.header img {
+.content {
+    position: relative;
     width: 100%;
-    max-width: 600px;
+    max-width: 900px;
     height: 100%;
-    object-fit: cover; /* Crop the image to fit the container */
-    object-position: center; /* Center the image within the container */
-    display: block;
-    margin: 0 auto; /* Center the image */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items at the top */
+    align-items: center;
+    padding: 20px 0;
 }
 
-/* Main content styles */
-.main img {
+.logo-container {
+    position: relative;
     width: 100%;
-    max-width: 800px;
+    max-width: 550px; /* Set a maximum width for both the logo and image */
+    margin-top: 100px; /* Adjust this value to position the logo as per Rollo Capital's site */
+}
+
+.center-logo {
+    width: 100%;
+    max-width: 550px;
     height: auto;
     display: block;
-    margin: 20px auto; /* Center the image and add margin */
+    margin-bottom: 10px; /* Spacing between the logo and the line */
 }
 
-.main p {
-    font-size: 1.2em;
-    margin: 20px 0;
+.logo-line {
+    width: 100%;
+    border-top: 1px solid black; /* Black line like Rollo Capital */
+    margin-bottom: 15px; /* Slightly reduce spacing between the line and the background image */
 }
 
-/* Footer styles */
-.footer p {
-    font-size: 0.9em;
-    margin: 5px 0;
+.background-image {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px; /* Reduce space between the image and the contact section */
 }
 
-/* Responsive design */
+footer {
+    width: 100%;
+    max-width: 550px;
+    text-align: center;
+    font-size: 14px;
+    color: black;
+    padding-top: 15px; /* Reduce padding to bring the contact section up */
+}
+
+footer a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px; /* Space between contact and line */
+}
+
+.footer-line {
+    width: 100%;
+    border-top: 1px solid black; /* Black line like Rollo Capital */
+    margin-bottom: 10px; /* Space between the line and the copyright text */
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .main img {
-        max-width: 100%;
+    .logo-container {
+        max-width: 400px;
+        margin-top: 80px; /* Adjust for smaller screens */
+    }
+
+    .center-logo, .background-image, footer {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-container {
+        max-width: 300px;
+        margin-top: 60px; /* Adjust for smaller screens */
+    }
+
+    .center-logo, .background-image, footer {
+        max-width: 300px;
+    }
+
+    footer {
+        padding-top: 10px; /* Adjust footer spacing on smaller screens */
     }
 }
